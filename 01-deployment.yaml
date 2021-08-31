@@ -15,9 +15,16 @@ spec:
       labels:
         app: reverse-words
     spec:
+      volumes:
+      - name: reversewords-storage
+        persistentVolumeClaim:
+          claimName: reversewords-claim
       containers:
       - name: reverse-words
         image: quay.io/mavazque/reversewords:latest
+        volumeMounts:
+          - mountPath: "/tmp"
+            name: reversewords-storage
         ports:
         - containerPort: 8080
           name: http

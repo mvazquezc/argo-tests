@@ -14,3 +14,4 @@ commonAnnotations:
 resources:
   - 00-namespace.yaml
   - 01-deployment.yaml
+  - 02-pvc.yaml
