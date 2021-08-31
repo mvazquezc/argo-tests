@@ -5,4 +5,6 @@ metadata:
     kubernetes.io/hostname: dummy-node.cnf20.cloud.lab.eng.bos.redhat.com
     testargo: testargo
   name: dummy-node.cnf20.cloud.lab.eng.bos.redhat.com
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
 spec: {}
