@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  testargocd/app: test
+
+commonAnnotations:
+  argcd.argoproj.io/compare-options: IgnoreExtraneous
+  argocd.argoproj.io/sync-options: Prune=false,SkipDryRunOnMissingResource=true
+
+#bases:
+#  -
+resources:
+  - 00-namespace.yaml
+  - 01-deployment.yaml
